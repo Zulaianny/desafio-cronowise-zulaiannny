@@ -1,0 +1,3 @@
+1.3 Perguhta conceitual
+
+Escolheria a opção b, pois poderia reduzir a busca e, assim, poder de processamento. No entanto, caso eu soubesse se a lista está ordenada, a opção a se torna viável, ou mesmo sendo a lista menor, exigindo menos tempo e menos processamento.
