@@ -1,0 +1,15 @@
+2.1 O que o código faz
+
+O código consulta dados de crédito a partir de um CPF por meio externo, em caso de sucesso, ele retorna um "OK", caso contrário pode retornar um erro permanente ou temporário, para este último, tenta novamente não excedendo 3 tentativas ao que retorna "ERRO_TEMPORARIO_ESGOTADO" e em caso de erro inesperado, a trata como Exceção.
+
+2.2 Rastreando a Exceção
+
+Ao retornar o Erro temporário, será executada 3 vezes que é a quantidade limite de vezes que pode retornar esse erro consecutivamente. Seus tempos de espera são  2 segundos na primeira falha, 4 segundos na segunda e atingirá o limite na terceira tentativa, levando em conta que o tempo usa exponencial (ESPERA_BASE ** tentativa). Retorna ao final {"status": "ERRO_TEMPORARIO_ESGOTADO", "dados": None}.
+
+2.3 Identificando um problema
+
+A função chama a si mesma sem "limites", o que pode gerar consumo excessivo de memória ou mesmo um estouro de tentativas, seria mais seguro usar um método de recurssão como o while para ter controle sobre isso.
+
+2.4 Proposta de melhoria
+
+Na função "consultar_credito" colocaria um "while tentativa <= MAX_TENTATIVAS" dentro do qual colocaria um "tempo_decorrido" para controlar a quantidade de tempo e assim, faria ele encerrar o processo em no máximo 30 segundos caso não excedesse o número de tentativas.
