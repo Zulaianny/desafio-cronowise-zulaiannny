@@ -1,0 +1,10 @@
+3.1 Java: Entendendo uma classe de domínio
+
+O primeiro println imprime true pois não atingiu o limite de tentativas, o segundo imprime false pois atingiu o limite de tentativas.
+O status é "FALHA_DEINITIVA" COM 3 TENTATIVAS.
+
+3.2 React/TypeScript: Lendo um componente
+
+a) Como a requisição não completou, o loading permanece como true e o resultado apresentado é "Carregando...".
+b) O useEffect é executado novamente fazendo uma nova requisição e atualizando os dados.
+c) Mudar o "tenanId" como dito anteriormente pode fazer com que dados carregados antes sejam exibidos enquanto a nova requisição atualiza os dados.
